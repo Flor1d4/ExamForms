@@ -88,7 +88,7 @@ namespace Exam1
                 x.BackColor = DefaultBackColor;
             }
         }
-        private void PlayerClickButon(object sender, EventArgs e)
+        private void PlayerClickButton(object sender, EventArgs e)
         {
             var button = (Button)sender;
             currentPlayer = Player.X;

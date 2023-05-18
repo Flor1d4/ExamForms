@@ -63,6 +63,16 @@ namespace Exam1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap background_9x9 {
+            get {
+                object obj = ResourceManager.GetObject("background_9x9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap background_menu {
             get {
                 object obj = ResourceManager.GetObject("background-menu", resourceCulture);

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(_3x3));
             this.button10 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -66,7 +67,7 @@
             this.button7.Size = new System.Drawing.Size(131, 121);
             this.button7.TabIndex = 22;
             this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.PlayerClickButon);
+            this.button7.Click += new System.EventHandler(this.PlayerClickButton);
             // 
             // button8
             // 
@@ -77,7 +78,7 @@
             this.button8.Size = new System.Drawing.Size(131, 121);
             this.button8.TabIndex = 21;
             this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.PlayerClickButon);
+            this.button8.Click += new System.EventHandler(this.PlayerClickButton);
             // 
             // button9
             // 
@@ -88,7 +89,7 @@
             this.button9.Size = new System.Drawing.Size(131, 121);
             this.button9.TabIndex = 20;
             this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.PlayerClickButon);
+            this.button9.Click += new System.EventHandler(this.PlayerClickButton);
             // 
             // button4
             // 
@@ -99,7 +100,7 @@
             this.button4.Size = new System.Drawing.Size(131, 121);
             this.button4.TabIndex = 19;
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.PlayerClickButon);
+            this.button4.Click += new System.EventHandler(this.PlayerClickButton);
             // 
             // button5
             // 
@@ -110,7 +111,7 @@
             this.button5.Size = new System.Drawing.Size(131, 121);
             this.button5.TabIndex = 18;
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.PlayerClickButon);
+            this.button5.Click += new System.EventHandler(this.PlayerClickButton);
             // 
             // button6
             // 
@@ -121,7 +122,7 @@
             this.button6.Size = new System.Drawing.Size(131, 121);
             this.button6.TabIndex = 17;
             this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.PlayerClickButon);
+            this.button6.Click += new System.EventHandler(this.PlayerClickButton);
             // 
             // button3
             // 
@@ -132,7 +133,7 @@
             this.button3.Size = new System.Drawing.Size(131, 121);
             this.button3.TabIndex = 16;
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.PlayerClickButon);
+            this.button3.Click += new System.EventHandler(this.PlayerClickButton);
             // 
             // button2
             // 
@@ -143,7 +144,7 @@
             this.button2.Size = new System.Drawing.Size(131, 121);
             this.button2.TabIndex = 15;
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.PlayerClickButon);
+            this.button2.Click += new System.EventHandler(this.PlayerClickButton);
             // 
             // button1
             // 
@@ -154,7 +155,7 @@
             this.button1.Size = new System.Drawing.Size(131, 121);
             this.button1.TabIndex = 14;
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.PlayerClickButon);
+            this.button1.Click += new System.EventHandler(this.PlayerClickButton);
             // 
             // label2
             // 
@@ -202,7 +203,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = global::Exam1.Properties.Resources.gRAY_6__backgrounf;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(438, 568);
+            this.ClientSize = new System.Drawing.Size(450, 568);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button7);
@@ -218,6 +219,7 @@
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "_3x3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "3x3";
