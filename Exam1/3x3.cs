@@ -26,26 +26,30 @@ namespace Exam1
             InitializeComponent();
             RestartGame();
         }
-      
         private void BotMove(object sender, EventArgs e)
         {
             if (buttons.Count > 0)
             {
-                int index = random.Next(buttons.Count);
-                buttons[index].Enabled = false;
                 currentPlayer = Player.O;
-                buttons[index].Text = currentPlayer.ToString();
-                buttons[index].BackColor = Color.OrangeRed;
+                int index = random.Next(buttons.Count);
+                Button button = buttons[index];
+                button.Enabled = false;
+                button.Text = currentPlayer.ToString();
+                button.BackColor = Color.OrangeRed;
                 buttons.RemoveAt(index);
-                CheckGame();
-                BotTimer.Stop();
+                bool gameWon = CheckGame(); 
+                if (!gameWon)
+                {
+                    currentPlayer = Player.X; 
+                    BotTimer.Stop(); 
+                }
             }
         }
         private void RestartGame(object sender, EventArgs e)
         {
             RestartGame();
         }
-        private void CheckGame()
+        private bool CheckGame()
         {
             if (button1.Text == "X" && button2.Text == "X" && button3.Text == "X" ||
                button4.Text == "X" && button5.Text == "X" && button6.Text == "X" ||
@@ -61,43 +65,53 @@ namespace Exam1
                 playerWinCount++;
                 label1.Text = "Player Wins: " + playerWinCount;
                 RestartGame();
+                return true;
             }
-            else if ((button1.Text == "O" && button2.Text == "O" && button3.Text == "O" ||
+            else if (button1.Text == "O" && button2.Text == "O" && button3.Text == "O" ||
                button4.Text == "O" && button5.Text == "O" && button6.Text == "O" ||
                button7.Text == "O" && button8.Text == "O" && button9.Text == "O" ||
                button1.Text == "O" && button4.Text == "O" && button7.Text == "O" ||
                button2.Text == "O" && button5.Text == "O" && button8.Text == "O" ||
                button3.Text == "O" && button6.Text == "O" && button9.Text == "O" ||
                button1.Text == "O" && button5.Text == "O" && button9.Text == "O" ||
-               button3.Text == "O" && button5.Text == "O" && button7.Text == "O"))
+               button3.Text == "O" && button5.Text == "O" && button7.Text == "O")
             {
                 BotTimer.Stop();
                 MessageBox.Show("Bot WINS");
                 BotWinCount++;
                 label2.Text = "Bot Wins: " + BotWinCount;
                 RestartGame();
+                return true;
             }
+            return false;
         }
         private void RestartGame()
         {
+            currentPlayer = Player.X;
             buttons = new List<Button> { button1, button2, button3, button4, button5, button6, button7, button8, button9 };
-            foreach (Button x in buttons)
+            BotTimer.Stop();
+            foreach (Button button in buttons)
             {
-                x.Enabled = true;
-                x.Text = " ";
-                x.BackColor = DefaultBackColor;
+                button.Enabled = true;
+                button.Text = " ";
+                button.BackColor = DefaultBackColor;
             }
+            currentPlayer = Player.X;
         }
         private void PlayerClickButton(object sender, EventArgs e)
         {
-            var button = (Button)sender;
+            Button button = (Button)sender;
             currentPlayer = Player.X;
             button.Text = currentPlayer.ToString();
             button.Enabled = false;
             button.BackColor = Color.Lavender;
             buttons.Remove(button);
-            CheckGame();
-            BotTimer.Start();
+
+            bool gameWon = CheckGame();
+            if (!gameWon)
+            {
+                BotTimer.Start(); 
+            }
         }
         private void ExitGame(object sender, EventArgs e)
         {
@@ -108,4 +122,4 @@ namespace Exam1
         }
     }
 }
- 
+
